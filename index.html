@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Khoka Babu</title>
+    <title>Nehal Ahmed</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -47,7 +47,7 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0">KHoka</h1>
+                    <h1 class="m-0">Injection</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -69,16 +69,15 @@
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                   <div class="col-lg-6 text-center text-lg-start">
-    <h1 class="text-white mb-4 animated slideInDown" id="dynamic-slogan"></h1>
-    <h2 class="text-secondary mb-3 animated slideInDown">Nehal Ahmed</h2>
-    <p class="text-white pb-3 animated slideInDown">
-        একজন ওয়ার্ডপ্রেস ডেভেলপার হিসেবে আমি সুন্দর ওয়েবসাইট গড়ি, আর একজন হ্যাকার হিসেবে আমি সেগুলোর নিরাপত্তা ভাঙতে জানি। 
-        <br><br><b>"No System is Safe... Everything is vulnerable."</b>
-    </p>
-    <a href="#contact" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Hire The Hacker</a>
-    <a href="#projects" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">My Exploits</a>
-</div>
+                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5 align-items-end">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated slideInDown">Cybersecurity Specialist | Quotex Broker | Web Developer</h1>
                             <p class="text-white pb-3 animated slideInDown"> Understanding hackers work requires high technical expertise; and their reasons are rarely clear. It could be economic profit, idealistic rebellion against society, egomaniac superiority or plain sadism.</p>
                             <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
                             <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
@@ -605,35 +604,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-<script>
-const canvas = document.getElementById('matrix');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%";
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
-
-function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#39FF14'; // নিয়ন গ্রিন
-    ctx.font = fontSize + 'px monospace';
-
-    drops.forEach((y, i) => {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, y * fontSize);
-        if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-    });
-}
-setInterval(draw, 33);
-</script>
-	
 </body>
 
-	<canvas id="matrix"></canvas>
 </html>
