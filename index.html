@@ -719,3 +719,98 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+<div class="nehal-footer-bottom">
+    <style>
+        .nehal-footer-bottom {
+            padding: 40px 20px;
+            text-align: center;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.8); /* হালকা ট্রান্সপারেন্ট কালো */
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+            margin-top: 30px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nehal-copyright-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nehal-main-text {
+            color: #ffffff;
+            font-size: 14px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .nehal-highlight {
+            color: #00E5FF;
+            text-decoration: none;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+            transition: 0.3s ease;
+        }
+
+        .nehal-highlight:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px #00E5FF;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .blink-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #27c93f; /* সবুজ ডট */
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 10px #27c93f;
+            animation: nehal-blink 1.5s infinite;
+        }
+
+        @keyframes nehal-blink {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .footer-tagline {
+            font-size: 11px;
+            color: rgba(0, 229, 255, 0.4);
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+    </style>
+
+    <div class="nehal-copyright-content">
+        <p class="nehal-main-text">
+            &copy; 2026 <a href="#" class="nehal-highlight">Nehal Ahmed</a>. 
+            All Rights Reserved.
+        </p>
+        
+        <div class="status-indicator">
+            <span class="blink-dot"></span>
+            System Status: Secure & Operational
+        </div>
+
+        <div class="footer-tagline">
+            Built with Passion for Cyber Security & WordPress
+        </div>
+    </div>
+</div>
