@@ -218,6 +218,83 @@
 </html>
 
 
+<div class="container-xxl py-5 border-top border-secondary" id="hacking-zone">
+        <div class="container px-lg-5">
+            <div class="text-center mb-5">
+                <h2 class="neon-text glitch" data-text="SYSTEM STATUS: SECURE">SYSTEM STATUS: SECURE</h2>
+                <p class="text-white-50 mt-2">"In the world of code, security is not a product, it's a process."</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="terminal-window" style="height: 300px; overflow: hidden; font-size: 12px;">
+                        <div class="terminal-header mb-2">
+                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                            <span class="ms-2 text-white-50">root@nehal:~# nmap -sV scan_live</span>
+                        </div>
+                        <div id="log-container" class="text-success p-2" style="font-family: 'JetBrains Mono', monospace; line-height: 1.5;">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="p-4 h-100 d-flex flex-column justify-content-center" style="background: rgba(0, 229, 255, 0.05); border-radius: 15px; border: 1px dashed var(--primary-blue);">
+                        <h4 class="neon-text mb-3">My Philosophy</h4>
+                        <ul class="list-unstyled text-white-50">
+                            <li class="mb-2"><i class="fa fa-angle-right neon-text me-2"></i> "Privacy is a right, not a privilege."</li>
+                            <li class="mb-2"><i class="fa fa-angle-right neon-text me-2"></i> "Hack to Protect, not to Destroy."</li>
+                            <li class="mb-2"><i class="fa fa-angle-right neon-text me-2"></i> "Every system has a weakness; my job is to find it first."</li>
+                        </ul>
+                        <div class="mt-3">
+                            <span class="badge bg-dark border border-info p-2 text-info">ENCRYPTION: AES-256</span>
+                            <span class="badge bg-dark border border-info p-2 text-info">FIREWALL: ACTIVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const logs = [
+            "[INFO] Initializing system scan...",
+            "[OK] Database connection established.",
+            "[SCAN] Searching for vulnerabilities...",
+            "[WARN] Potential XSS entry point found at /input.",
+            "[INFO] Patching security hole...",
+            "[OK] Firewall updated successfully.",
+            "[INFO] Scanning port 80, 443, 22...",
+            "[SUCCESS] System hardening complete.",
+            "[INFO] Monitoring incoming packets...",
+            "[BLOCK] Suspicious IP 192.168.1.105 rejected.",
+            "[INFO] Generating daily security report...",
+            "[SYSTEM] All protocols running smoothly."
+        ];
+
+        let logIndex = 0;
+        const logContainer = document.getElementById('log-container');
+
+        function addLog() {
+            const p = document.createElement('p');
+            p.className = "mb-1";
+            p.innerHTML = `<span style="color: #ffbd2e;">></span> ${logs[logIndex]}`;
+            logContainer.appendChild(p);
+            
+            logIndex = (logIndex + 1) % logs.length;
+            
+            if (logContainer.childNodes.length > 10) {
+                logContainer.removeChild(logContainer.firstChild);
+            }
+            
+            // অটো স্ক্রল ডাউন
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        setInterval(addLog, 1500); // প্রতি ১.৫ সেকেন্ডে নতুন লাইন আসবে
+    </script>
+
+
+
 
 <div class="container-xxl py-5 border-top border-secondary">
         <div class="container px-lg-5">
