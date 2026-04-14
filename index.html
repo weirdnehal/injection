@@ -366,6 +366,108 @@
 
 
 
+<div class="container-xxl py-5 border-top border-secondary">
+        <div class="container px-lg-5 text-center">
+            <h2 class="neon-text mb-4">Security Toolbox</h2>
+            <p class="text-white-50 mb-5">Check your password security strength instantly.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="terminal-window p-4">
+                        <input type="text" id="passInput" class="form-control bg-dark text-white border-info mb-3" placeholder="Type a password..." onkeyup="checkStrength()">
+                        <div class="progress mb-2" style="height: 10px;">
+                            <div id="strengthBar" class="progress-bar" style="width: 0%"></div>
+                        </div>
+                        <small id="strengthText" class="text-white-50">Strength: Waiting...</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container px-lg-5">
+            <h2 class="neon-text text-center mb-5">My Tech Stack</h2>
+            <div class="row g-4 text-center">
+                <div class="col-3 col-md-2">
+                    <div class="feature-item p-3">
+                        <i class="fab fa-php fa-2x neon-text"></i>
+                        <p class="small mt-2">PHP</p>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="feature-item p-3">
+                        <i class="fab fa-python fa-2x neon-text"></i>
+                        <p class="small mt-2">Python</p>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="feature-item p-3">
+                        <i class="fab fa-js fa-2x neon-text"></i>
+                        <p class="small mt-2">JS</p>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="feature-item p-3">
+                        <i class="fa fa-database fa-2x neon-text"></i>
+                        <p class="small mt-2">MySQL</p>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="feature-item p-3">
+                        <i class="fab fa-git-alt fa-2x neon-text"></i>
+                        <p class="small mt-2">Git</p>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="feature-item p-3">
+                        <i class="fa fa-cloud fa-2x neon-text"></i>
+                        <p class="small mt-2">Server</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container px-lg-5 text-center">
+            <div class="p-5" style="background: linear-gradient(rgba(0,229,255,0.1), rgba(0,0,0,0.5)); border-radius: 30px; border: 1px solid var(--primary-blue);">
+                <h1 class="text-white mb-4">আপনার প্রোজেক্টকে সুরক্ষিত করতে প্রস্তুত?</h1>
+                <p class="text-white-50 mb-4">আমি বর্তমানে নতুন প্রজেক্টের জন্য এভেলেবেল আছি। আপনার আইডিয়া নিয়ে আলোচনা করতে এখনই ইনবক্স করুন।</p>
+                <a href="#contact" class="btn btn-primary py-3 px-5 rounded-pill">Start a Conversation</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkStrength() {
+            let pass = document.getElementById('passInput').value;
+            let bar = document.getElementById('strengthBar');
+            let text = document.getElementById('strengthText');
+            let strength = 0;
+
+            if (pass.length > 6) strength += 20;
+            if (pass.match(/[a-z]+/)) strength += 20;
+            if (pass.match(/[A-Z]+/)) strength += 20;
+            if (pass.match(/[0-9]+/)) strength += 20;
+            if (pass.match(/[!@#$%^&*()]+/)) strength += 20;
+
+            bar.style.width = strength + "%";
+            
+            if (strength <= 40) {
+                bar.style.backgroundColor = "#ff5f56";
+                text.innerText = "Strength: Weak (Vulnerable)";
+            } else if (strength <= 80) {
+                bar.style.backgroundColor = "#ffbd2e";
+                text.innerText = "Strength: Moderate (Better)";
+            } else {
+                bar.style.backgroundColor = "#27c93f";
+                text.innerText = "Strength: Strong (Secure)";
+            }
+        }
+    </script>
+
+
 
 <div class="container-xxl py-5 border-top border-secondary">
         <div class="container px-lg-5">
