@@ -656,6 +656,81 @@
 </div>
 
 
+<div class="nehal-animated-divider">
+    <style>
+        .nehal-animated-divider {
+            width: 100%;
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .divider-label-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .divider-text {
+            color: #00E5FF;
+            font-size: 10px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        /* The Animated Line */
+        .scan-line-container {
+            width: 80%;
+            max-width: 600px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .scan-line-progress {
+            position: absolute;
+            height: 100%;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, #00E5FF, transparent);
+            box-shadow: 0 0 15px #00E5FF;
+            animation: scan-move 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        /* Small Decorative Brackets */
+        .bracket {
+            color: #ff5f56; /* Neon Red */
+            font-weight: bold;
+            animation: bracket-pulse 1.5s infinite;
+        }
+
+        @keyframes scan-move {
+            0% { left: -150px; }
+            100% { left: 100%; }
+        }
+
+        @keyframes bracket-pulse {
+            50% { opacity: 0.3; transform: scale(1.2); }
+        }
+    </style>
+
+    <div class="divider-label-box">
+        <span class="bracket">[</span>
+        <span class="divider-text">Initializing Next Module</span>
+        <span class="bracket">]</span>
+    </div>
+
+    <div class="scan-line-container">
+        <div class="scan-line-progress"></div>
+    </div>
+</div>
+
 
 <div class="nehal-health-checker">
     <style>
