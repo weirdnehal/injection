@@ -519,6 +519,110 @@
     </div>
 
 
+<div class="nehal-full-divider">
+    <style>
+        .nehal-full-divider {
+            width: 100%;
+            padding: 80px 0; /* ওপর এবং নিচে পর্যাপ্ত জায়গা */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+            position: relative;
+        }
+
+        /* Background Glow */
+        .nehal-full-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 80%);
+            pointer-events: none;
+        }
+
+        .divider-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+
+        .status-badge {
+            background: #ff5f56;
+            color: #000;
+            padding: 2px 10px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 3px;
+            animation: divider-alert 1s infinite;
+        }
+
+        .divider-title {
+            color: #00E5FF;
+            font-size: 12px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Full Width Scan Line */
+        .full-line-container {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .full-line-scanner {
+            position: absolute;
+            height: 100%;
+            width: 30%; /* স্ক্যানার বারের দৈর্ঘ্য */
+            background: linear-gradient(90deg, transparent, #00E5FF, #ff5f56, transparent);
+            box-shadow: 0 0 20px #00E5FF;
+            animation: full-scan-move 4s ease-in-out infinite;
+        }
+
+        /* Decorative Side Dots */
+        .line-end {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00E5FF;
+            border-radius: 50%;
+            top: -3px;
+            box-shadow: 0 0 10px #00E5FF;
+        }
+
+        @keyframes full-scan-move {
+            0% { left: -40%; }
+            50% { left: 110%; }
+            100% { left: -40%; }
+        }
+
+        @keyframes divider-alert {
+            50% { opacity: 0.5; transform: scale(0.95); }
+        }
+    </style>
+
+    <div class="divider-header">
+        <span class="status-badge">Alert</span>
+        <span class="divider-title">Switching to next security module</span>
+    </div>
+
+    <div class="full-line-container">
+        <div class="line-end" style="left: 0;"></div>
+        <div class="full-line-scanner"></div>
+        <div class="line-end" style="right: 0;"></div>
+    </div>
+</div>
+
+
 
 
 <div class="nehal-tool-wrapper">
@@ -656,173 +760,108 @@
 </div>
 
 
-<div class="nehal-animated-divider">
+<div class="nehal-full-divider">
     <style>
-        .nehal-animated-divider {
+        .nehal-full-divider {
             width: 100%;
-            padding: 50px 0;
+            padding: 80px 0; /* ওপর এবং নিচে পর্যাপ্ত জায়গা */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             font-family: 'JetBrains Mono', monospace;
+            position: relative;
         }
 
-        .divider-label-box {
+        /* Background Glow */
+        .nehal-full-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 80%);
+            pointer-events: none;
+        }
+
+        .divider-header {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
+            gap: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
         }
 
-        .divider-text {
-            color: #00E5FF;
+        .status-badge {
+            background: #ff5f56;
+            color: #000;
+            padding: 2px 10px;
             font-size: 10px;
-            letter-spacing: 5px;
+            font-weight: bold;
             text-transform: uppercase;
-            opacity: 0.7;
+            border-radius: 3px;
+            animation: divider-alert 1s infinite;
         }
 
-        /* The Animated Line */
-        .scan-line-container {
-            width: 80%;
-            max-width: 600px;
+        .divider-title {
+            color: #00E5FF;
+            font-size: 12px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Full Width Scan Line */
+        .full-line-container {
+            width: 100%;
             height: 2px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             position: relative;
-            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        .scan-line-progress {
+        .full-line-scanner {
             position: absolute;
             height: 100%;
-            width: 100px;
-            background: linear-gradient(90deg, transparent, #00E5FF, transparent);
-            box-shadow: 0 0 15px #00E5FF;
-            animation: scan-move 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            width: 30%; /* স্ক্যানার বারের দৈর্ঘ্য */
+            background: linear-gradient(90deg, transparent, #00E5FF, #ff5f56, transparent);
+            box-shadow: 0 0 20px #00E5FF;
+            animation: full-scan-move 4s ease-in-out infinite;
         }
 
-        /* Small Decorative Brackets */
-        .bracket {
-            color: #ff5f56; /* Neon Red */
-            font-weight: bold;
-            animation: bracket-pulse 1.5s infinite;
-        }
-
-        @keyframes scan-move {
-            0% { left: -150px; }
-            100% { left: 100%; }
-        }
-
-        @keyframes bracket-pulse {
-            50% { opacity: 0.3; transform: scale(1.2); }
-        }
-    </style>
-
-    <div class="divider-label-box">
-        <span class="bracket">[</span>
-        <span class="divider-text">Initializing Next Module</span>
-        <span class="bracket">]</span>
-    </div>
-
-    <div class="scan-line-container">
-        <div class="scan-line-progress"></div>
-    </div>
-</div>
-
-
-<div class="nehal-health-checker">
-    <style>
-        .nehal-health-checker {
-            padding: 40px 20px;
-            max-width: 850px;
-            margin: 30px auto;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .checker-box {
-            background: rgba(10, 10, 10, 0.9);
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .checker-header {
-            color: #00E5FF;
-            text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .input-group-custom {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .checker-input {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #333;
-            padding: 12px 15px;
-            color: #00E5FF;
-            border-radius: 5px;
-            outline: none;
-        }
-
-        .checker-input:focus {
-            border-color: #00E5FF;
-        }
-
-        .check-btn {
-            background: #00E5FF;
-            color: #000;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .check-btn:hover {
-            box-shadow: 0 0 15px #00E5FF;
-            transform: scale(1.05);
-        }
-
-        .result-display {
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px dashed #444;
-            padding: 20px;
-            border-radius: 8px;
-            display: none; /* শুরুতে লুকানো থাকবে */
-        }
-
-        .status-up { color: #27c93f; }
-        .status-down { color: #ff5f56; }
-        
-        .loading-pulse {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
+        /* Decorative Side Dots */
+        .line-end {
+            position: absolute;
+            width: 8px;
+            height: 8px;
             background: #00E5FF;
             border-radius: 50%;
-            margin-left: 10px;
-            animation: pulse-health 1s infinite;
+            top: -3px;
+            box-shadow: 0 0 10px #00E5FF;
         }
 
-        @keyframes pulse-health {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(2); opacity: 0; }
+        @keyframes full-scan-move {
+            0% { left: -40%; }
+            50% { left: 110%; }
+            100% { left: -40%; }
+        }
+
+        @keyframes divider-alert {
+            50% { opacity: 0.5; transform: scale(0.95); }
         }
     </style>
 
+    <div class="divider-header">
+        <span class="status-badge">Alert</span>
+        <span class="divider-title">Switching to next security module</span>
+    </div>
+
+    <div class="full-line-container">
+        <div class="line-end" style="left: 0;"></div>
+        <div class="full-line-scanner"></div>
+        <div class="line-end" style="right: 0;"></div>
+    </div>
+</div>
     <div class="checker-box">
         <h3 class="checker-header"><i class="fas fa-heartbeat me-2"></i> Website Security Audit</h3>
         
@@ -954,7 +993,108 @@
         
         .decoded { color: #fff; opacity: 1; text-shadow: 0 0 5px #ff5f56; }
     </style>
+<div class="nehal-full-divider">
+    <style>
+        .nehal-full-divider {
+            width: 100%;
+            padding: 80px 0; /* ওপর এবং নিচে পর্যাপ্ত জায়গা */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+            position: relative;
+        }
 
+        /* Background Glow */
+        .nehal-full-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 80%);
+            pointer-events: none;
+        }
+
+        .divider-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+
+        .status-badge {
+            background: #ff5f56;
+            color: #000;
+            padding: 2px 10px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 3px;
+            animation: divider-alert 1s infinite;
+        }
+
+        .divider-title {
+            color: #00E5FF;
+            font-size: 12px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Full Width Scan Line */
+        .full-line-container {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .full-line-scanner {
+            position: absolute;
+            height: 100%;
+            width: 30%; /* স্ক্যানার বারের দৈর্ঘ্য */
+            background: linear-gradient(90deg, transparent, #00E5FF, #ff5f56, transparent);
+            box-shadow: 0 0 20px #00E5FF;
+            animation: full-scan-move 4s ease-in-out infinite;
+        }
+
+        /* Decorative Side Dots */
+        .line-end {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00E5FF;
+            border-radius: 50%;
+            top: -3px;
+            box-shadow: 0 0 10px #00E5FF;
+        }
+
+        @keyframes full-scan-move {
+            0% { left: -40%; }
+            50% { left: 110%; }
+            100% { left: -40%; }
+        }
+
+        @keyframes divider-alert {
+            50% { opacity: 0.5; transform: scale(0.95); }
+        }
+    </style>
+
+    <div class="divider-header">
+        <span class="status-badge">Alert</span>
+        <span class="divider-title">Switching to next security module</span>
+    </div>
+
+    <div class="full-line-container">
+        <div class="line-end" style="left: 0;"></div>
+        <div class="full-line-scanner"></div>
+        <div class="line-end" style="right: 0;"></div>
+    </div>
+</div>
     <div class="scan-terminal">
         <h3 class="scan-header">ACTIVE TARGET DECRYPTION</h3>
         
@@ -1346,6 +1486,111 @@
         }
     </style>
 
+
+<div class="nehal-full-divider">
+    <style>
+        .nehal-full-divider {
+            width: 100%;
+            padding: 80px 0; /* ওপর এবং নিচে পর্যাপ্ত জায়গা */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+            position: relative;
+        }
+
+        /* Background Glow */
+        .nehal-full-divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 80%);
+            pointer-events: none;
+        }
+
+        .divider-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+
+        .status-badge {
+            background: #ff5f56;
+            color: #000;
+            padding: 2px 10px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 3px;
+            animation: divider-alert 1s infinite;
+        }
+
+        .divider-title {
+            color: #00E5FF;
+            font-size: 12px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Full Width Scan Line */
+        .full-line-container {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .full-line-scanner {
+            position: absolute;
+            height: 100%;
+            width: 30%; /* স্ক্যানার বারের দৈর্ঘ্য */
+            background: linear-gradient(90deg, transparent, #00E5FF, #ff5f56, transparent);
+            box-shadow: 0 0 20px #00E5FF;
+            animation: full-scan-move 4s ease-in-out infinite;
+        }
+
+        /* Decorative Side Dots */
+        .line-end {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00E5FF;
+            border-radius: 50%;
+            top: -3px;
+            box-shadow: 0 0 10px #00E5FF;
+        }
+
+        @keyframes full-scan-move {
+            0% { left: -40%; }
+            50% { left: 110%; }
+            100% { left: -40%; }
+        }
+
+        @keyframes divider-alert {
+            50% { opacity: 0.5; transform: scale(0.95); }
+        }
+    </style>
+
+    <div class="divider-header">
+        <span class="status-badge">Alert</span>
+        <span class="divider-title">Switching to next security module</span>
+    </div>
+
+    <div class="full-line-container">
+        <div class="line-end" style="left: 0;"></div>
+        <div class="full-line-scanner"></div>
+        <div class="line-end" style="right: 0;"></div>
+    </div>
+</div>
+
+    
     <div class="encrypt-box">
         <h3 class="encrypt-header"><i class="fas fa-key me-2"></i> Encrypt Message [AES-256 style]</h3>
         
