@@ -1514,6 +1514,163 @@
         </div>
     </div>
 
+
+
+
+
+<div class="nehal-bio-block">
+    <style>
+        .nehal-bio-block {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .bio-flex-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Image Styling */
+        .profile-frame {
+            position: relative;
+            width: 280px;
+            height: 380px;
+            border: 2px solid #00E5FF;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) contrast(110%);
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: rgba(0, 229, 255, 0.6);
+            box-shadow: 0 0 15px #00E5FF;
+            animation: scanner-move 3s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes scanner-move {
+            0% { top: 0%; }
+            50% { top: 100%; }
+            100% { top: 0%; }
+        }
+
+        /* Content Styling */
+        .bio-details {
+            flex: 1;
+            min-width: 300px;
+            color: #E0E0E0;
+        }
+
+        .bio-name {
+            font-size: 2rem;
+            color: #00E5FF;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        .bio-tag {
+            font-size: 14px;
+            color: #27c93f;
+            background: rgba(39, 201, 63, 0.1);
+            padding: 3px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .terminal-info {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid #00E5FF;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .info-line { margin-bottom: 10px; }
+        .label-text { color: rgba(255, 255, 255, 0.4); text-transform: uppercase; font-size: 11px; }
+        .value-text { color: #fff; display: block; }
+
+        .skills-chips {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 5px 12px;
+            font-size: 12px;
+            border-radius: 20px;
+            color: #00E5FF;
+            transition: 0.3s;
+        }
+
+        .chip:hover {
+            background: #00E5FF;
+            color: #000;
+            box-shadow: 0 0 15px #00E5FF;
+        }
+    </style>
+
+    <div class="bio-flex-container">
+        <div class="profile-frame">
+            <div class="scan-line"></div>
+            <img src="my_profile.jpg" alt="Nehal Ahmed Profile">
+        </div>
+
+        <div class="bio-details">
+            <h2 class="bio-name">Nehal Ahmed</h2>
+            <span class="bio-tag"><i class="fas fa-user-shield me-2"></i> Cyber Security Specialist</span>
+
+            <div class="terminal-info">
+                <div class="info-line">
+                    <span class="label-text">Current Assignment</span>
+                    <span class="value-text">Full-stack WordPress Security & Pentesting</span>
+                </div>
+                <div class="info-line">
+                    <span class="label-text">Tech Stack</span>
+                    <span class="value-text">PHP, WordPress, Python (Automation), Kali Linux</span>
+                </div>
+                <div class="info-line">
+                    <span class="label-text">Specialization</span>
+                    <span class="value-text">Malware Removal, System Hardening & Digital Forensics</span>
+                </div>
+            </div>
+
+            <div class="skills-chips">
+                <span class="chip">#WP_DEV</span>
+                <span class="chip">#PENTESTING</span>
+                <span class="chip">#NETWORKING</span>
+                <span class="chip">#CYBER_SEC</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
     <div class="container-xxl py-5 mb-5" id="contact">
         <div class="container px-lg-5">
             <div class="terminal-window">
