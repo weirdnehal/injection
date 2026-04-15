@@ -385,6 +385,146 @@
         </div>
     </div>
 
+
+
+
+<div class="nehal-tool-wrapper">
+    <style>
+        .nehal-tool-wrapper {
+            padding: 40px 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tool-card {
+            background: rgba(30, 30, 30, 0.6);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .tool-header {
+            color: #00E5FF;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #00E5FF;
+        }
+
+        .label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .value {
+            color: #fff;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .scan-btn {
+            background: transparent;
+            border: 1px solid #00E5FF;
+            color: #00E5FF;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .scan-btn:hover {
+            background: #00E5FF;
+            color: #000;
+            box-shadow: 0 0 15px #00E5FF;
+        }
+
+        #loading-text {
+            color: #27c93f;
+            display: none;
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
+    <div class="tool-card">
+        <h3 class="tool-header"><i class="fas fa-microchip me-2"></i> Client System Scan</h3>
+        
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="label">IPv4 Address</span>
+                <span id="ip-addr" class="value">Click scan to detect</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Operating System</span>
+                <span id="os-info" class="value">Waiting...</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Browser Status</span>
+                <span id="browser-info" class="value">Secure</span>
+            </div>
+        </div>
+
+        <button class="scan-btn" onclick="startScan()">Analyze My System</button>
+        <div id="loading-text">Executing remote scripts... [DONE]</div>
+    </div>
+
+    <script>
+        function startScan() {
+            const btn = document.querySelector('.scan-btn');
+            const loading = document.getElementById('loading-text');
+            
+            btn.innerText = "Scanning...";
+            loading.style.display = "block";
+
+            // Get OS/Browser Info
+            const os = navigator.platform;
+            const browser = navigator.userAgent.split(' ').slice(-1)[0];
+            document.getElementById('os-info').innerText = os;
+            document.getElementById('browser-info').innerText = browser;
+
+            // Get IP Address using a public API
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip-addr').innerText = data.ip;
+                    btn.innerText = "Re-Scan System";
+                })
+                .catch(() => {
+                    document.getElementById('ip-addr').innerText = "Blocked by Firewall";
+                    btn.innerText = "Re-Scan System";
+                });
+        }
+    </script>
+</div>
+
+
+
+
     <div class="container-xxl py-5">
         <div class="container px-lg-5">
             <h2 class="neon-text text-center mb-5">My Tech Stack</h2>
