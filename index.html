@@ -499,6 +499,8 @@
 
 
 
+
+
 <div class="container-xxl py-5 border-top border-secondary">
         <div class="container px-lg-5 text-center">
             <h2 class="neon-text mb-4">Security Toolbox</h2>
@@ -517,6 +519,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 
 <div class="nehal-full-divider">
@@ -627,6 +632,89 @@
 
 
 
+<div class="nehal-tool-wrapper">
+    <style>
+        .nehal-tool-wrapper {
+            padding: 40px 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tool-card {
+            background: rgba(30, 30, 30, 0.6);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .tool-header {
+            color: #00E5FF;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #00E5FF;
+        }
+
+        .label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .value {
+            color: #fff;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .scan-btn {
+            background: transparent;
+            border: 1px solid #00E5FF;
+            color: #00E5FF;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .scan-btn:hover {
+            background: #00E5FF;
+            color: #000;
+            box-shadow: 0 0 15px #00E5FF;
+        }
+
+        #loading-text {
+            color: #27c93f;
+            display: none;
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
     <div class="tool-card">
         <h3 class="tool-header"><i class="fas fa-microchip me-2"></i> Client System Scan</h3>
         
@@ -682,6 +770,96 @@
 
 
 
+<div class="nehal-health-checker">
+    <style>
+        .nehal-health-checker {
+            padding: 40px 20px;
+            max-width: 850px;
+            margin: 30px auto;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .checker-box {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .checker-header {
+            color: #00E5FF;
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .input-group-custom {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .checker-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            padding: 12px 15px;
+            color: #00E5FF;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .checker-input:focus {
+            border-color: #00E5FF;
+        }
+
+        .check-btn {
+            background: #00E5FF;
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .check-btn:hover {
+            box-shadow: 0 0 15px #00E5FF;
+            transform: scale(1.05);
+        }
+
+        .result-display {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px dashed #444;
+            padding: 20px;
+            border-radius: 8px;
+            display: none; /* শুরুতে লুকানো থাকবে */
+        }
+
+        .status-up { color: #27c93f; }
+        .status-down { color: #ff5f56; }
+        
+        .loading-pulse {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #00E5FF;
+            border-radius: 50%;
+            margin-left: 10px;
+            animation: pulse-health 1s infinite;
+        }
+
+        @keyframes pulse-health {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+    </style>
 
     <div class="checker-box">
         <h3 class="checker-header"><i class="fas fa-heartbeat me-2"></i> Website Security Audit</h3>
@@ -739,81 +917,10 @@
 </div>
 
 
+    
 
-<div class="nehal-hacking-scan">
-    <style>
-        .nehal-hacking-scan {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: 30px auto;
-            font-family: 'JetBrains Mono', monospace;
-        }
 
-        .scan-terminal {
-            background: #000;
-            border: 1px solid #ff5f56; /* Red border for critical status */
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 0 30px rgba(255, 95, 86, 0.2);
-            overflow: hidden;
-            position: relative;
-        }
 
-        .scan-header {
-            color: #ff5f56;
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px rgba(255, 95, 86, 0.5);
-        }
-
-        .scan-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 15px;
-            font-size: 13px;
-        }
-
-        .status-panel {
-            background: rgba(255, 95, 86, 0.1);
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .log-panel {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px;
-            height: 180px;
-            overflow: hidden;
-            color: #27c93f;
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 5px;
-            background: #333;
-            margin-top: 15px;
-            overflow: hidden;
-        }
-
-        .progress-bar-scan {
-            width: 0%;
-            height: 100%;
-            background: #ff5f56;
-            transition: width 0.1s linear;
-        }
-
-        .decrypt-char {
-            display: inline-block;
-            width: 1ch;
-            text-align: center;
-            opacity: 0.5;
-        }
-        
-        .decoded { color: #fff; opacity: 1; text-shadow: 0 0 5px #ff5f56; }
-    </style>
 <div class="nehal-full-divider">
     <style>
         .nehal-full-divider {
@@ -916,6 +1023,11 @@
         <div class="line-end" style="right: 0;"></div>
     </div>
 </div>
+
+
+</div>
+
+    
     <div class="scan-terminal">
         <h3 class="scan-header">ACTIVE TARGET DECRYPTION</h3>
         
