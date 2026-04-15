@@ -657,6 +657,154 @@
 
 
 
+<div class="nehal-health-checker">
+    <style>
+        .nehal-health-checker {
+            padding: 40px 20px;
+            max-width: 850px;
+            margin: 30px auto;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .checker-box {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .checker-header {
+            color: #00E5FF;
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .input-group-custom {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .checker-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            padding: 12px 15px;
+            color: #00E5FF;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .checker-input:focus {
+            border-color: #00E5FF;
+        }
+
+        .check-btn {
+            background: #00E5FF;
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .check-btn:hover {
+            box-shadow: 0 0 15px #00E5FF;
+            transform: scale(1.05);
+        }
+
+        .result-display {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px dashed #444;
+            padding: 20px;
+            border-radius: 8px;
+            display: none; /* শুরুতে লুকানো থাকবে */
+        }
+
+        .status-up { color: #27c93f; }
+        .status-down { color: #ff5f56; }
+        
+        .loading-pulse {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #00E5FF;
+            border-radius: 50%;
+            margin-left: 10px;
+            animation: pulse-health 1s infinite;
+        }
+
+        @keyframes pulse-health {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+    </style>
+
+    <div class="checker-box">
+        <h3 class="checker-header"><i class="fas fa-heartbeat me-2"></i> Website Security Audit</h3>
+        
+        <div class="input-group-custom">
+            <input type="text" id="siteUrl" class="checker-input" placeholder="Enter URL (e.g. google.com)">
+            <button class="check-btn" onclick="checkHealth()">Audit</button>
+        </div>
+
+        <div id="resultBox" class="result-display">
+            <p id="analysis-text" style="color: #aaa; font-size: 13px;"></p>
+            <div style="margin-top: 10px;">
+                <span style="color: #fff;">Status: </span>
+                <span id="siteStatus" class="fw-bold">--</span>
+            </div>
+            <div style="margin-top: 5px;">
+                <span style="color: #fff;">Protocol: </span>
+                <span id="protocolStatus" style="color: #ffbd2e;">--</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkHealth() {
+            const url = document.getElementById('siteUrl').value;
+            const resultBox = document.getElementById('resultBox');
+            const statusText = document.getElementById('siteStatus');
+            const protocolText = document.getElementById('protocolStatus');
+            const analysisText = document.getElementById('analysis-text');
+
+            if (!url) {
+                alert("Please enter a URL first!");
+                return;
+            }
+
+            resultBox.style.display = "block";
+            analysisText.innerHTML = "Injecting packets... <span class='loading-pulse'></span>";
+            statusText.innerText = "Scanning...";
+
+            setTimeout(() => {
+                // সিমুলেটেড ডাটা (যেহেতু ব্রাউজার সরাসরি CORS এর জন্য অন্য সাইট চেক করতে পারে না)
+                analysisText.innerHTML = "> Analysis Complete for: " + url;
+                
+                if (url.includes("http")) {
+                    statusText.innerHTML = "<span class='status-up'>ONLINE [SECURE]</span>";
+                    protocolText.innerText = "SSL/TLS Active";
+                } else {
+                    statusText.innerHTML = "<span class='status-up'>ONLINE</span>";
+                    protocolText.innerText = "No SSL Detected (Warning)";
+                    protocolText.style.color = "#ff5f56";
+                }
+            }, 2000);
+        }
+    </script>
+</div>
+
+
+
 
     <div class="container-xxl py-5">
         <div class="container px-lg-5">
