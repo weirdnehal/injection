@@ -215,7 +215,61 @@
             });
         });
     </script>
+
+    <style>
+    /* টেক্সট সিলেক্ট এবং ড্র্যাগ করা বন্ধ */
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+
+    /* ইমেজ সেভ করা বন্ধ (Optional) */
+    img {
+        pointer-events: none;
+    }
+</style>
+
+<script>
+    // ১. রাইট ক্লিক (Context Menu) বন্ধ করা
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // ২. কীবোর্ড শর্টকাট (Inspect Element & View Source) বন্ধ করা
+    document.onkeydown = function(e) {
+        // F12 key বন্ধ
+        if (event.keyCode == 123) {
+            return false;
+        }
+        // Ctrl+Shift+I (Inspect) বন্ধ
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        // Ctrl+Shift+J (Console) বন্ধ
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        // Ctrl+U (View Source) বন্ধ
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+        // Ctrl+S (Save Page) বন্ধ
+        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+            return false;
+        }
+    };
+
+    // ৩. কনসোল উইন্ডো ওপেন করলে ওয়ার্নিং দেওয়া বা পেজ রিফ্রেশ (DevTools Detection)
+    setInterval(function() {
+        if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+            document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:20%; font-family:sans-serif;'>⚠️ ACCESS DENIED: Security Breach Detected!</h1>";
+        }
+    }, 1000);
+</script>
 </body>
+
+    
 </html>
 
 
