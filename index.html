@@ -501,6 +501,211 @@
 
 
 
+<div class="mrx-premium-ads-section">
+    <style>
+        .mrx-premium-ads-section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 50px auto;
+            position: relative;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* The Premium Container */
+        .ads-container {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 229, 255, 0.05);
+        }
+
+        /* Animated Border Light */
+        .ads-container::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, #00E5FF, transparent);
+            animation: border-flow 4s linear infinite;
+        }
+
+        @keyframes border-flow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .ads-left {
+            flex: 1.5;
+            min-width: 300px;
+        }
+
+        .mrx-badge {
+            display: inline-block;
+            background: rgba(255, 95, 86, 0.1);
+            color: #ff5f56;
+            border: 1px solid #ff5f56;
+            padding: 4px 12px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            50% { box-shadow: 0 0 15px #ff5f56; opacity: 0.7; }
+        }
+
+        .ads-h2 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .ads-h2 span { color: #00E5FF; text-shadow: 0 0 10px #00E5FF; }
+
+        .service-cards-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .mrx-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .mrx-card:hover {
+            background: rgba(0, 229, 255, 0.05);
+            border-color: #00E5FF;
+            transform: translateY(-5px);
+        }
+
+        .mrx-card i {
+            font-size: 28px;
+            color: #00E5FF;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Right Side: Payment & Contact */
+        .ads-right {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px dashed rgba(0, 229, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .dollar-status {
+            color: #27c93f;
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .glow-btn {
+            display: block;
+            background: transparent;
+            color: #00E5FF;
+            border: 2px solid #00E5FF;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .glow-btn:hover {
+            background: #00E5FF;
+            color: #000;
+            box-shadow: 0 0 30px #00E5FF;
+        }
+
+        .payment-methods {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 24px;
+            opacity: 0.5;
+        }
+    </style>
+
+    <div style="width: 100%; height: 1px; background: rgba(0, 229, 255, 0.2); margin-bottom: 40px; position: relative;">
+        <div style="position: absolute; width: 50px; height: 100%; background: #00E5FF; box-shadow: 0 0 10px #00E5FF; left: 0; animation: scan-line 3s linear infinite;"></div>
+    </div>
+
+    <div class="ads-container">
+        <div class="ads-left">
+            <span class="mrx-badge">Ad-Network Active</span>
+            <h2 class="ads-h2">Boost Your <span>Digital</span> Presence</h2>
+            <p style="color: #888; font-size: 14px; line-height: 1.6;">
+                আমরা রিয়েল ডলার পেমেন্টের মাধ্যমে আপনার ফেসবুক পেইজ এবং ইউটিউব চ্যানেলের জন্য হাই-কোয়ালিটি অ্যাডস রান করি। আপনার টার্গেটেড অডিয়েন্সের কাছে পৌঁছান একদম লিগ্যাল মেথডে।
+            </p>
+
+            <div class="service-cards-row">
+                <div class="mrx-card">
+                    <i class="fab fa-facebook-square"></i>
+                    <h4 style="font-size: 16px;">FB Boosting</h4>
+                    <p style="font-size: 11px; color: #666;">Targeted Sales & Engagement</p>
+                </div>
+                <div class="mrx-card">
+                    <i class="fab fa-youtube"></i>
+                    <h4 style="font-size: 16px;">YT Ads</h4>
+                    <p style="font-size: 11px; color: #666;">Watchtime & Subs Growth</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ads-right">
+            <span class="dollar-status"><i class="fas fa-check-circle"></i> International Dollar Card Support</span>
+            <h3 style="font-size: 20px; color: #fff;">Ready to Boost?</h3>
+            <p style="color: #666; font-size: 12px; margin-top: 10px;">আমাদের অ্যাড ম্যানেজাররা ২৪/৭ অনলাইনে থাকে।</p>
+            
+            <a href="https://wa.me/88017XXXXXXXX" class="glow-btn">
+                <i class="fab fa-whatsapp"></i> Contact Admin
+            </a>
+
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fas fa-university"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes scan-line {
+        0% { left: 0%; }
+        100% { left: 100%; }
+    }
+</style>
+
+
+
+
+
+
 
 <div class="container-xxl py-5 border-top border-secondary">
         <div class="container px-lg-5 text-center">
